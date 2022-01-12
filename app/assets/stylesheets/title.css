@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.titleCard{
+    margin: 5px;
+    width: 350px;
+}
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+p#title{
+    text-align: center;
+    padding: 2% 0% 2% 0%;
+}
+ol{
+    list-style-type: none;
+    text-align: center;
+    padding: 0px;
+}
+li{
+    display: inline-block; 
+    margin: 0px 5px 0px 5px;
+    font-size: .8em;
+}
+#image{
+    width: 170px;
+    float: left;
+    padding: 0% 2% 0% 0%;
+}
+#description{ 
+    height: 250px;
+    overflow: scroll;
+}
+
+#description p{
+    font-size: .9em;
+    padding: 0% 0% 2% 5%;
+}
+
+#links{
+    clear: both;
+}

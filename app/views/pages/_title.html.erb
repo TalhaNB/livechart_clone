@@ -1,0 +1,31 @@
+<div class="titleCard" class="flex-child">
+    <p id="title"><strong> <%= series.title %> </strong></p>
+    <ol id="tags">
+        <% @tags = series.tags.split(',')%><br>
+        <li> <%= @tags[0]%> </li>
+        <li> <%= @tags[1] %> </li>
+        <li> <%= @tags[2] %> </li>
+    </ol>
+    
+    <div id="image">
+        <img src= <%= series.image %>>
+    </div>
+    <div id="description">
+        <p> <%= series.description %> </p>
+    </div>
+
+    <div id="links">
+        <ol>
+            <% @links = series.links.split(',')%><br>
+            <li id="web">
+                <a href= <%= @links[0] %> >web</a>
+            </li>
+            <li id="mal">
+                <a href= <%= @links[1] %> >mal</a>
+            </li>
+            <li id="adb">
+                <a href= <%= @links[2] %> >adb</a>
+            </li>
+        </ol>
+    </div>
+</div>

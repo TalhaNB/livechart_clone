@@ -1,0 +1,9 @@
+<div class="flex-container">
+    <% @anime_titles.each do |item|%>
+        <%if item.season == "spring-21"%>
+            <%= render partial: "title", locals: {series: item} %>
+        <%end%>
+    <%end%>
+</div>
+<br>
+<h4> <a href="/home">Back</a> </h4>
