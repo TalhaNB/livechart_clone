@@ -2,9 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
+/*Title card css*/
 .titleCard{
     margin: 5px;
-    width: 30%;
+    width: 30%; 
+    box-shadow: 1px 1px 10px #dfe6e9;   
 }
 .flex-container {
     padding: 2%;
@@ -14,23 +16,21 @@
     justify-content: space-around;
 
 }
-
 .flex-child {
     flex: 1;
 }  
 
 p#title{
     text-align: center;
-    padding: 2% 0% 2% 0%;
 }
 ol{
     list-style-type: none;
-    text-align: center;
-    padding: 0px;
+    margin: auto;
+    display:table-row;
 }
 li{
-    display: inline-block; 
-    margin: 0px 5px 0px 5px;
+    display: table-cell;
+    padding: 0px 5px 5px 5px;
     font-size: .8em;
 }
 #image{
@@ -41,6 +41,7 @@ li{
 #description{ 
     height: 250px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 #description p{
@@ -50,4 +51,22 @@ li{
 
 #links{
     clear: both;
+}
+
+/*Fancy Scrolbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }

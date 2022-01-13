@@ -1,10 +1,10 @@
 <div class="titleCard" class="flex-child">
     <p id="title"><strong> <%= series.title %> </strong></p>
     <ol id="tags">
-        <% @tags = series.tags.split(',')%><br>
-        <li> <%= @tags[0]%> </li>
-        <li> <%= @tags[1] %> </li>
-        <li> <%= @tags[2] %> </li>
+        <% @tags = series.tags.split('|')%><br>
+        <% @tags.each do |tag|%>
+            <li> <%= @tags[0]%> </li>
+        <% end %>
     </ol>
     
     <div id="image">
@@ -16,7 +16,7 @@
 
     <div id="links">
         <ol>
-            <% @links = series.links.split(',')%><br>
+            <% @links = series.links.split('|')%><br>
             <li id="web">
                 <a href= <%= @links[0] %> >web</a>
             </li>
