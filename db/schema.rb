@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_132349) do
+ActiveRecord::Schema.define(version: 2022_01_13_102508) do
 
   create_table "shows", force: :cascade do |t|
     t.string "title"
     t.text "image"
     t.text "description"
     t.string "season"
-    t.datetime "launch_date", precision: 6
+    t.date "launch_date"
     t.string "rating"
-    t.text "tags"
-    t.text "links"
+    t.string "tags"
+    t.string "links"
   end
 
 end
