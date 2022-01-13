@@ -1,8 +1,7 @@
+<%= render partial: "partials/navbar"%>
 <div class="flex-container">
     <% @anime_titles.each do |item|%>
-        <%if item.season == "fall-22"%>
-            <%= render partial: "title", locals: {series: item} %>
-        <%end%>
+            <%= render partial: "partials/title", locals: {series: item} %>
     <%end%>
 </div>
 <br>

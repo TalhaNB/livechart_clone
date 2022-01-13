@@ -1,8 +1,6 @@
-<h2>Home</h2>
-
-<ul>
-    <li><a href="/summer_anime">Summer Anime</a></li>
-    <li><a href="/spring_anime">Spring Anime</a></li>
-    <li><a href="/fall_anime">Fall Anime</a></li>
-    <li><a href="/winter_anime">Winter Anime</a></li>
-</ul>
+<%= render partial: "partials/navbar"%>
+<div id="home-container" class="flex-container">
+    <% @anime_titles.each do |item|%>
+            <%= render partial: "partials/title", locals: {series: item} %>
+    <%end%>
+</div>
