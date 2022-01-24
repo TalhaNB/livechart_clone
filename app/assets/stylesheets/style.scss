@@ -1,37 +1,24 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-size: 12px;
 }
-/*Title card css*/
-.titleCard{
-    margin: 5px;
-    width: 30%; 
-    box-shadow: 1px 1px 10px #dfe6e9;   
+#title{
+    margin: 0%;
 }
-.flex-container {
-    padding: 2%;
-    margin: auto;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-around;
-
+#anime-tags{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid rgba(118,118,118,.1);
 }
-.flex-child {
-    flex: 1;
-}  
-
-p#title{
-    text-align: center;
+#anime-tags > li{
+    display: inline-block;
+    font-size: .7em;
+    line-height: 1.6 em;
 }
-ol{
-    list-style-type: none;
-    margin: auto;
-    display:table-row;
-}
-li{
-    display: table-cell;
-    padding: 0px 5px 5px 5px;
-    font-size: .8em;
+#release{
+    border-bottom: 1px solid rgba(118,118,118,.1);
 }
 #image{
     width: 175px;
@@ -39,19 +26,13 @@ li{
     padding: 0% 2% 0% 0%;
 }
 #description{ 
-    height: 250px;
+    height: 172px;
     overflow: scroll;
     overflow-x: hidden;
+    font-size: .8em;
+    margin: 1% 2% 1% 2%;
 }
-
-#description p{
-    font-size: .9em;
-    padding: 0% 0% 2% 5%;
-}
-
-#links{
-    clear: both;
-}
+.card-body{}
 
 /*Fancy Scrolbar*/
 /* width */
@@ -70,3 +51,76 @@ li{
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

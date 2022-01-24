@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+    
+    def Show
+    end
+    
     def home
         @anime_titles = Show.all
     end
@@ -13,5 +17,6 @@ class PagesController < ApplicationController
     end
     def winter_shows
         @anime_titles = Show.where(season: "winter-22")
-    end 
+    end
+    
 end

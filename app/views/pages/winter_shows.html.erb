@@ -1,5 +1,5 @@
 <%= render partial: "partials/navbar"%>
-<div class="flex-container">
+<div class="row row-cols-1 row-cols-md-4 g-4 mx-2 mt-1">
     <% @anime_titles.each do |item|%>
             <%= render partial: "partials/title", locals: {series: item} %>
     <%end%>

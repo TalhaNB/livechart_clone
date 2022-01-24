@@ -1,31 +1,36 @@
-<div class="titleCard" class="flex-child">
-    <p id="title"><strong> <%= series.title %> </strong></p>
-    <ol id="tags">
-        <% @tags = series.tags.split('|')%><br>
-        <% @tags.each do |tag|%>
-            <li> <%= @tags[0]%> </li>
-        <% end %>
-    </ol>
-    
-    <div id="image">
-        <img src= <%= series.image %>>
-    </div>
-    <div id="description">
-        <p> <%= series.description %> </p>
-    </div>
 
-    <div id="links">
-        <ol>
-            <% @links = series.links.split('|')%><br>
-            <li id="web">
-                <a href= <%= @links[0] %> >web</a>
-            </li>
-            <li id="mal">
-                <a href= <%= @links[1] %> >mal</a>
-            </li>
-            <li id="adb">
-                <a href= <%= @links[2] %> >adb</a>
-            </li>
-        </ol>
+    <div class="col" style="max-width: 60%;">
+        <div class="card">
+            <p id="title" class="text-center mt-1"><strong> <%= series.title %> </strong></p>
+                <ol id="anime-tags" class="text-center">
+                    <% @tags = series.tags.split('|')%>
+                    <% @tags.each do |tag|%>
+                        <li> <%= tag %> &nbsp;</li>
+                    <% end %>
+                </ol>
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src= <%= series.image %> class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body p-0">
+                        <div class="text-center small"> Oct 3, 2021 at 8:00pm PKT </div>
+                        <hr class="m-0">
+                        <p class="card-text" id="description"><%= series.description %></p>
+                    </div>
+                </div>
+            </div>
+                <ol id="anime-tags" class="text-center">
+                    <% @links = series.links.split('|')%>
+                    <li id="web">
+                        <a href= <%= @links[0] %> >web</a>
+                    </li>
+                    <li id="mal">
+                        <a href= <%= @links[1] %> >mal</a>
+                    </li>
+                    <li id="adb">
+                        <a href= <%= @links[2] %> >adb</a>
+                    </li>
+                </ol>
+        </div>
     </div>
-</div>
