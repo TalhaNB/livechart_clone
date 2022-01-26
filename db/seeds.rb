@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first
+    require 'json'    
     text_from_file = File.read("https://innoversetech.org/anime_data.json")
     data = JSON.parse(text_from_file)
     data.each do |entry|
