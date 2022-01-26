@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first
     require 'json'    
-    text_from_file = File.read("https://innoversetech.org/anime_data.json")
-    data = JSON.parse(text_from_file)
+#    text_from_file = File.read("https://innoversetech.org/anime_data.json")
+#    data = JSON.parse(text_from_file)
+#below is for heroku seeding, above is for local seeding
+    data = JSON.load(open("https://innoversetech.org/anime_data.json"))
     data.each do |entry|
         Show.create!(entry)
     end
