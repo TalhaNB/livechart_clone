@@ -1,13 +1,15 @@
 
     <div class="col" style="max-width: 60%;">
         <div class="card">
-            <p id="title" class="text-center mt-1"><strong> <%= series.title %> </strong></p>
-                <ol id="anime-tags" class="text-center">
-                    <% @tags = series.tags.split('|')%>
-                    <% @tags.each do |tag|%>
-                        <li> <%= tag %> &nbsp;</li>
-                    <% end %>
-                </ol>
+            <p id="title" class="text-center mt-1">
+                <strong> <%= link_to series.title, anime_path(series), class: "text-decoration-none" %> </strong>
+            </p>
+            <ol id="anime-tags" class="text-center">
+                <% @tags = series.tags.split('|')%>
+                <% @tags.each do |tag|%>
+                    <li> <%= tag %> &nbsp;</li>
+                <% end %>
+            </ol>
             <div class="row g-0">
                 <div class="col-md-5">
                     <img src= <%= series.image %> class="img-fluid rounded-start" alt="...">

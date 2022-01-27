@@ -1,0 +1,89 @@
+<%= render 'partials/navbar' %>
+<div class="d-flex justify-content-center" style="background-color: #ecf0f1;">
+    <div class="row w-75 p-3">
+        <div class="col-md-3">
+            <img src= <%= @anime.image.gsub("small", "large") %> class="img-fluid rounded-start" alt= <%= @anime.title %> >
+        </div>
+        <div class="col-md-9">
+            <h1> <%= @anime.title %> </h1>    
+            <ol id="anime-tags" class="text-muted">
+                    <% @anime.tags.split('|').each do |tag| %>
+                        <li> <%= tag %> &nbsp;</li>
+                    <% end %>
+            </ol>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col">
+                            <small class="text-muted">Source</small>
+                            <p class="lead">Manga</p>
+                        </div>
+                        <div class="col">
+                            <small class="text-muted">Rating</small>
+                            <p class="lead"><%= @anime.rating %></p>
+                        </div>
+                        <div class="col">
+                            <small class="text-muted">Episodes</small>
+                            <p class="lead">?</p>
+                        </div>
+                        <div class="col">
+                            <small class="text-muted">Run time</small>
+                            <p class="lead">24 min</p>
+                        </div>
+                    </div>
+                    <hr class="m-0 mb-2">
+                    <h5 class="card-title">Synopsis</h5>
+                    <p class="card-text"> <%= @anime.description %> </p>
+                    <hr class="m-0 mb-2">
+                    <% @links = @anime.links.split('|')%>
+                    <div class="row text-center">
+                        <div class="col">
+                            <a class="lead text-decoration-none" href= <%= @links[0] %> > Website </a>
+                        </div>
+                        <div class="col">
+                            <a class="lead text-decoration-none" href= <%= @links[1] %> > MyAnimeList </a>
+                        </div>
+                        <div class="col">
+                            <a class="lead text-decoration-none" href= <%= @links[2] %> > AniDB </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="col" style="max-width: 60%;">
+        <div class="card">
+            <p id="title" class="text-center mt-1"><strong> <%= @anime.title %> </strong></p>
+                <ol id="anime-tags" class="text-center">
+                    <% @tags = @anime.tags.split('|')%>
+                    <% @tags.each do |tag|%>
+                        <li> <%= tag %> &nbsp;</li>
+                    <% end %>
+                </ol>
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src= <%= @anime.image %> class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body p-0">
+                        <div class="text-center small"> Oct 3, 2021 at 8:00pm PKT </div>
+                        
+                        <p class="card-text" id="description"><%= @anime.description %></p>
+                    </div>
+                </div>
+            </div>
+                <ol id="anime-tags" class="text-center">
+                    <% @links = @anime.links.split('|')%>
+                    <li id="web">
+                        <a href= <%= @links[0] %> >web</a>
+                    </li>
+                    <li id="mal">
+                        <a href= <%= @links[1] %> >mal</a>
+                    </li>
+                    <li id="adb">
+                        <a href= <%= @links[2] %> >adb</a>
+                    </li>
+                </ol>
+        </div>
+    </div> -->

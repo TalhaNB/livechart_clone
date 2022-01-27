@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get "/spring_anime", to: "pages#spring_shows"
   get "/fall_anime", to: "pages#fall_shows"
   get "/winter_anime", to: "pages#winter_shows"
-  resources :pages
+  resources :anime, only: [:show]
 end
