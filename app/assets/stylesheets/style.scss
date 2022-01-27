@@ -32,6 +32,11 @@
     font-size: .8em;
     margin: 1% 2% 1% 2%;
 }
+@media screen and (max-width: 425px) {
+    #description {
+      height: 125px;
+    }
+  }
 /*Fancy Scrolbar*/
 /* width */
 ::-webkit-scrollbar {
