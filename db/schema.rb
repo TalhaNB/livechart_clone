@@ -10,17 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_135836) do
+ActiveRecord::Schema.define(version: 2022_01_28_165857) do
 
   create_table "shows", force: :cascade do |t|
-    t.string "title"
-    t.text "image"
+    t.string "title_jap"
+    t.string "title_eng"
+    t.string "image"
     t.text "description"
-    t.string "season"
+    t.string "studio"
+    t.string "episodes"
+    t.string "source"
     t.string "launch_date"
+    t.string "run_time"
     t.string "rating"
-    t.string "links"
     t.string "tags"
+    t.string "external_links"
+    t.string "season"
   end
 
 end
