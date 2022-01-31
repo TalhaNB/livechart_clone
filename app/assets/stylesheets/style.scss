@@ -3,6 +3,11 @@
     padding: 0px;
     font-size: 12px;
 }
+body{
+  background-color: #ecf0f1;
+  min-height: calc(100vh - 69px);
+  max-width: 100%;
+}
 #title{
     margin: 0%;
 }
@@ -26,7 +31,7 @@
     padding: 0% 2% 0% 0%;
 }
 #description{ 
-    height: 172px;
+    height: 140px;
     overflow: scroll;
     overflow-x: hidden;
     font-size: .8em;
@@ -55,75 +60,81 @@
     background: #555; 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.anilist{ background-color: rgb(35, 43, 52); }
+.animeplanet{ background-color: #193767; }
+.anidb{ background-color: #34394d; }
+.animelist{ background-color:#2c549d; } 
+.anisearch{ background-color: #ff7725; }
+.kitsu{ background-color: #443140; }
+
+#arrow-pointer {
+    width: 130px;
+    height: 50px;
+    color: white;
+    background: #3498db;
+    position: relative;
+  
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0; width: 0; height: 0;
+      border-left: 25px solid white;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+    }
+  
+    &:before {
+      content: '';
+      position: absolute;
+      right: -25px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 25px solid #3498db;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+    }
+  }
+  
+  /* CSS */
+  .button-5 {
+    align-items: center;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 150px;
+  }
+  
+  .button-5:hover,
+  .button-5:focus {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  .button-5:hover {
+    transform: translateY(-1px);
+  }
+  
+  .button-5:active {
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }

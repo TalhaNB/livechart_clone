@@ -1,8 +1,7 @@
-    <%# <div class="col" style="max-width: 60%;"> %>
     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <div class="card">
             <p id="title" class="text-center mt-1">
-                <strong> <%= link_to series.title, anime_path(series), class: "text-decoration-none" %> </strong>
+                <strong> <%= link_to series.title_jap.truncate(50), anime_path(series), class: "text-decoration-none" %> </strong>
             </p>
             <ol id="anime-tags" class="text-center">
                 <% @tags = series.tags.split('|')%>
@@ -16,23 +15,51 @@
                 </div>
                 <div class="col-8 col-sm-7 col-md-7 col-lg-7 col-xl-7">
                     <div class="card-body p-0">
-                        <div class="text-center small"> Oct 3, 2021 at 8:00pm PKT </div>
+                        <div class="text-center small"> <%= series.studio =%> </div>
+                        <hr class="m-0">
+                        <div class="text-center mt-1" style="font-size: .7em;"> Oct 3, 2021 at 8:00pm PKT </div>
+                        <hr class="m-0">
+                        <div class="text-center small row"> 
+                            <div class="col" style="font-size: .7em;"><%= series.source =%></div>
+                            <div class="col" style="font-size: .7em;"><%= series.episodes =%> eps x <%= series.run_time =%></div>
+                        </div>
                         <hr class="m-0">
                         <p class="card-text" id="description"><%= series.description %></p>
                     </div>
                 </div>
             </div>
                 <ol id="anime-tags" class="text-center">
-                    <% @links = series.links.split('|')%>
-                    <li id="web">
-                        <a href= <%= @links[0] %> >web</a>
-                    </li>
-                    <li id="mal">
-                        <a href= <%= @links[1] %> >mal</a>
-                    </li>
-                    <li id="adb">
-                        <a href= <%= @links[2] %> >adb</a>
-                    </li>
+                    <% links = series.external_links.split('|')%>
+                    <% if links[0] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[0]%> target="_blank">AniL</a>
+                        </li>
+                    <% end %>
+                    <% if links[1] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[1]%> target="_blank">MAL</a>
+                        </li>
+                    <% end %>
+                    <% if links[2] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[2]%> target="_blank">AniDB</a>
+                        </li>
+                    <% end %>
+                    <% if links[3] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[3]%> target="_blank">AniS</a>
+                        </li>
+                    <% end %>
+                    <% if links[4] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[4]%> target="_blank">AP</a>
+                        </li>
+                    <% end %>
+                    <% if links[5] != "null" %>
+                        <li class="mx-1">
+                            <a href= <%= links[5]%> target="_blank">K</a>
+                        </li>
+                    <% end %>
                 </ol>
         </div>
     </div>

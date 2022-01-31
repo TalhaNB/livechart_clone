@@ -1,11 +1,11 @@
-<%= render 'partials/navbar' %>
-<div class="d-flex justify-content-center h-100" style="background-color: #ecf0f1;">
-    <div class="row w-75 p-3">
-        <div class="col-md-3">
-            <img src= <%= @anime.image.gsub("small", "large") %> class="img-fluid rounded-start" alt= <%= @anime.title %> >
+<div class="d-flex justify-content-center" style="min-height: calc(100vh - 110px);">
+    <div class="row p-3 gx-0">
+        <div class="col-md-3 mx-3">
+            <img src= <%= @anime.image.gsub("small", "large") %> class="img-fluid rounded-start" alt= <%= @anime.title_jap %> >
         </div>
-        <div class="col-md-9">
-            <h1> <%= @anime.title %> </h1>    
+        <div class="col-md-8">
+            <h1> <%= @anime.title_jap %> </h1>
+            <h4 class="text-muted"> <%= @anime.title_eng %> </h4>
             <ol id="anime-tags" class="text-muted">
                     <% @anime.tags.split('|').each do |tag| %>
                         <li> <%= tag %> &nbsp;</li>
@@ -15,12 +15,16 @@
                 <div class="card-body">
                     <div class="row text-center">
                         <div class="col">
-                            <small class="text-muted">Source</small>
-                            <p class="lead">Manga</p>
+                            <div id="arrow-pointer">
+                                <div class="pt-1 ps-4">
+                                    <small>Rating</small>
+                                    <h4><%= @anime.rating %></h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="col">
-                            <small class="text-muted">Rating</small>
-                            <p class="lead"><%= @anime.rating %></p>
+                            <small class="text-muted">Source</small>
+                            <p class="lead">Manga</p>
                         </div>
                         <div class="col">
                             <small class="text-muted">Episodes</small>
@@ -35,16 +39,39 @@
                     <h5 class="card-title">Synopsis</h5>
                     <p class="card-text"> <%= @anime.description %> </p>
                     <hr class="m-0 mb-2">
-                    <% @links = @anime.links.split('|')%>
-                    <div class="row text-center">
-                        <div class="col">
-                            <a class="lead text-decoration-none" href= <%= @links[0] %> > Website </a>
-                        </div>
-                        <div class="col">
-                            <a class="lead text-decoration-none" href= <%= @links[1] %> > MyAnimeList </a>
-                        </div>
-                        <div class="col">
-                            <a class="lead text-decoration-none" href= <%= @links[2] %> > AniDB </a>
+                    <% links = @anime.external_links.split('|')%>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <% if links[0] != "null" %>
+                                <div class="col-6 button-5 anilist mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[0] %> target="_blank"> AniList </a>
+                                </div>
+                            <%end%>
+                            <% if links[1] != "null" %>
+                                <div class="col-6 button-5 animelist mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[1] %> target="_blank" > MyAnimeList </a>
+                                </div>
+                            <%end%>
+                            <% if links[2] != "null" %>
+                                <div class="col-6 button-5 anidb mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[2] %> target="_blank"> AniDB </a>
+                                </div>
+                            <%end%>
+                            <% if links[3] != "null" %>
+                                <div class="col-6 button-5 anisearch mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[3] %> target="_blank"> AniSearch </a>
+                                </div>
+                            <%end%>
+                            <% if links[4] != "null" %>
+                                <div class="col-6 button-5 animeplanet mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[4] %> target="_blank"> AnimePlanet </a>
+                                </div>
+                            <%end%>
+                            <% if links[5] != "null" %>
+                                <div class="col-6 button-5 kitsu mx-3 my-2">
+                                    <a class="lead text-decoration-none" style="color: white;" href= <%= links[5] %> target="_blank"> Kitsu </a>
+                                </div>
+                            <%end%>
                         </div>
                     </div>
                 </div>
@@ -52,38 +79,3 @@
         </div>
     </div>
 </div>
-<!--<div class="col" style="max-width: 60%;">
-        <div class="card">
-            <p id="title" class="text-center mt-1"><strong> <%= @anime.title %> </strong></p>
-                <ol id="anime-tags" class="text-center">
-                    <% @tags = @anime.tags.split('|')%>
-                    <% @tags.each do |tag|%>
-                        <li> <%= tag %> &nbsp;</li>
-                    <% end %>
-                </ol>
-            <div class="row g-0">
-                <div class="col-md-5">
-                    <img src= <%= @anime.image %> class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-7">
-                    <div class="card-body p-0">
-                        <div class="text-center small"> Oct 3, 2021 at 8:00pm PKT </div>
-                        
-                        <p class="card-text" id="description"><%= @anime.description %></p>
-                    </div>
-                </div>
-            </div>
-                <ol id="anime-tags" class="text-center">
-                    <% @links = @anime.links.split('|')%>
-                    <li id="web">
-                        <a href= <%= @links[0] %> >web</a>
-                    </li>
-                    <li id="mal">
-                        <a href= <%= @links[1] %> >mal</a>
-                    </li>
-                    <li id="adb">
-                        <a href= <%= @links[2] %> >adb</a>
-                    </li>
-                </ol>
-        </div>
-    </div> -->
